@@ -29,6 +29,21 @@ no_block_display=1
 # import patching functions/variables - see for reference
 . tools/ak3-core.sh;
 
+## Select the correct image to flash
+userflavor="$(file_getprop /system/build.prop "ro.build.flavor")";
+case "$userflavor" in
+    aospa_alioth-user) os="aospa"; os_string="Paranoid Android ROM";;
+    aospa_apollo-user) os="aospa"; os_string="Paranoid Android ROM";;
+    aospa_lmi-user) os="aospa"; os_string="Paranoid Android ROM";;
+    missi-user) os="miui"; os_string="MIUI ROM";;
+    missi_phoneext4_cn-user) os="miui"; os_string="MIUI ROM";;
+    missi_phone_cn-user) os="miui"; os_string="MIUI ROM";;
+    qssi-user) os="miui"; os_string="MIUI ROM";;
+    *) os="aosp"; os_string="AOSP ROM";;
+esac;
+ui_print "  -> $os_string is detected!";
+ui_print "If your current OS is not [$os_string], please make sure you have access to the [system] partition in your current environment or recovery!";
+
 mv $home/kernels/Image $home/Image;
 
 ## AnyKernel boot install

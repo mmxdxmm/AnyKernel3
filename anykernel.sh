@@ -46,6 +46,9 @@ ui_print "If your current OS is not [$os_string], please make sure you have acce
 
 mv $home/kernels/Image $home/Image;
 
+# If you have some problems with the new kernel, try to uncomment the following line to also flash the [dtb].
+# mv $home/kernels/dtb $home/dtb;
+
 ## AnyKernel boot install
 split_boot;
 

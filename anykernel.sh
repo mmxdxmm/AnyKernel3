@@ -42,7 +42,6 @@ case "$userflavor" in
     *) os="aosp"; os_string="AOSP ROM";;
 esac;
 ui_print "  -> $os_string is detected!";
-ui_print "If your current OS is not [$os_string], please make sure you have access to the [system] partition in your current environment or recovery!";
 
 mv $home/kernels/Image $home/Image;
 

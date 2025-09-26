@@ -4,7 +4,7 @@
 ### AnyKernel setup
 # global properties
 properties() { '
-kernel.string=N0Kernel by EmanuelCN compiled by JHC
+kernel.string=tools by JHC
 do.devicecheck=1
 do.modules=0
 do.systemless=1
